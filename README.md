@@ -1,5 +1,5 @@
 # IbmMqClient  [![NuGet version](https://badge.fury.io/nu/IbmMqClient.svg)](http://badge.fury.io/nu/IbmMqClient)
-IBM MQ standalone client for .NET
+IBM MQ standalone client for .NET (converted official java client v9.0 via IKVM)
 
 ```csharp
 using com.ibm.msg.client.jms;

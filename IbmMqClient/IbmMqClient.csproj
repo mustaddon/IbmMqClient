@@ -1,61 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53E6D25C-E812-48B3-A3EF-EE67B7539730}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>IbmMqClient</RootNamespace>
-    <AssemblyName>IbmMqClient</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFrameworks>net461;net6.0</TargetFrameworks>
+	<SignAssembly>True</SignAssembly>
+	<AssemblyOriginatorKeyFile>..\IbmMqClient.snk</AssemblyOriginatorKeyFile>
+	<AssemblyVersion>9.0.4</AssemblyVersion>
+	<FileVersion>9.0.4</FileVersion>
+	<Version>9.0.4-preview.1</Version>
+	<Company></Company>
+	<Authors>Leonid Salavatov</Authors>
+	<Copyright>Leonid Salavatov 2022</Copyright>
+	<PackageId>IbmMqClient</PackageId>
+	<Product>IbmMqClient</Product>
+	<Title>IbmMqClient</Title>
+	<Description>IBM MQ standalone client for .NET (converted official java client v9.0 via IKVM)</Description>
+	<PackageTags>ibm mq jms xms client dotnet csharp ikvm</PackageTags>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageProjectUrl>https://github.com/mustaddon/IbmMqClient</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/mustaddon/IbmMqClient</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<NeutralLanguage />
+	<PackageReleaseNotes></PackageReleaseNotes>
+	<IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="com.ibm.mq.allclient-9.0.4.0">
-      <HintPath>..\_bin\ibm_mq\com.ibm.mq.allclient-9.0.4.0.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.OpenJDK.Core">
-      <HintPath>..\_bin\ikvm\IKVM.OpenJDK.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.Runtime">
-      <HintPath>..\_bin\ikvm\IKVM.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="IKVM" Version="8.2.1" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <IkvmReference Include=".\com.ibm.mq.allclient-9.0.4.0.jar">
+		<KeyFile>..\IbmMqClient.snk</KeyFile>
+	</IkvmReference>
   </ItemGroup>
+	
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="$(MSBuildThisFileDirectory)/bin/$(Configuration)/**/com.ibm.mq.allclient.dll" Pack="True" PackagePath="lib\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
