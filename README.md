@@ -1,12 +1,20 @@
 # IbmMqClient  [![NuGet version](https://badge.fury.io/nu/IbmMqClient.svg)](http://badge.fury.io/nu/IbmMqClient)
 IBM MQ standalone client for .NET (converted official java client v9.0 via IKVM)
 
-```csharp
-using com.ibm.msg.client.jms;
-using com.ibm.msg.client.wmq.common;
+
+.NET CLI
+```cli
+dotnet new console --name "IbmMqClientExample"
+cd IbmMqClientExample
+dotnet add package IbmMqClient -v 9.0.4-preview.1
 ```
 
-```csharp
+Program.cs:
+```C#
+using com.ibm.msg.client.jms;
+using com.ibm.msg.client.wmq.common;
+
+
 var ff = JmsFactoryFactory.getInstance(JmsConstants.__Fields.WMQ_PROVIDER);
 var cf = ff.createConnectionFactory();
 
