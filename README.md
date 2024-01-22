@@ -2,14 +2,14 @@
 IBM MQ standalone client for .NET (converted official java client v9.0 via IKVM)
 
 
-.NET CLI
+*.NET CLI*
 ```cli
 dotnet new console --name "IbmMqClientExample"
 cd IbmMqClientExample
 dotnet add package IbmMqClient -v 9.0.4-preview.2
 ```
 
-Program.cs:
+*Program.cs:*
 ```C#
 using com.ibm.msg.client.jms;
 using com.ibm.msg.client.wmq.common;
