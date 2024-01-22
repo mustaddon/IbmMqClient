@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;net6.0</TargetFrameworks>
+    <TargetFrameworks>net472;net6.0</TargetFrameworks>
 	<SignAssembly>True</SignAssembly>
 	<AssemblyOriginatorKeyFile>..\IbmMqClient.snk</AssemblyOriginatorKeyFile>
 	<AssemblyVersion>9.0.4</AssemblyVersion>
 	<FileVersion>9.0.4</FileVersion>
-	<Version>9.0.4-preview.1</Version>
+	<Version>9.0.4-preview.2</Version>
 	<Company></Company>
 	<Authors>Leonid Salavatov</Authors>
-	<Copyright>Leonid Salavatov 2022</Copyright>
+	<Copyright>Leonid Salavatov 2024</Copyright>
 	<PackageId>IbmMqClient</PackageId>
 	<Product>IbmMqClient</Product>
 	<Title>IbmMqClient</Title>
@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IKVM" Version="8.2.1" />
+    <PackageReference Include="IKVM" Version="8.7.4" />
   </ItemGroup>
 
   <ItemGroup>

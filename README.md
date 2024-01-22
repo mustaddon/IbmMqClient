@@ -6,7 +6,7 @@ IBM MQ standalone client for .NET (converted official java client v9.0 via IKVM)
 ```cli
 dotnet new console --name "IbmMqClientExample"
 cd IbmMqClientExample
-dotnet add package IbmMqClient -v 9.0.4-preview.1
+dotnet add package IbmMqClient -v 9.0.4-preview.2
 ```
 
 Program.cs:
@@ -33,3 +33,4 @@ using (var context = cf.createContext())
     producer.send(queue, "Hello World");
 }
 ```
+[Program.cs](https://github.com/mustaddon/IbmMqClient/blob/master/TestConsoleApp/Program.cs)
