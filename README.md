@@ -6,7 +6,7 @@ IBM MQ standalone client for .NET (converted official java client v9.0 via IKVM)
 ```cli
 dotnet new console --name "IbmMqClientExample"
 cd IbmMqClientExample
-dotnet add package IbmMqClient -v 9.0.4-preview.2
+dotnet add package IbmMqClient -v 9.0.4
 ```
 
 *Program.cs:*
@@ -15,15 +15,15 @@ using com.ibm.msg.client.jms;
 using com.ibm.msg.client.wmq.common;
 
 
-var ff = JmsFactoryFactory.getInstance(JmsConstants.__Fields.WMQ_PROVIDER);
+var ff = JmsFactoryFactory.getInstance(JmsConstants.WMQ_PROVIDER);
 var cf = ff.createConnectionFactory();
 
-cf.setIntProperty(CommonConstants.__Fields.WMQ_CONNECTION_MODE, CommonConstants.__Fields.WMQ_CM_CLIENT);
-cf.setStringProperty(CommonConstants.__Fields.WMQ_HOST_NAME, "127.0.0.1");
-cf.setIntProperty(CommonConstants.__Fields.WMQ_PORT, 8010);
-cf.setStringProperty(CommonConstants.__Fields.WMQ_CHANNEL, "EXAMPLE.CHANNEL.ONE");
-cf.setStringProperty(CommonConstants.__Fields.WMQ_QUEUE_MANAGER, "EXAMPLE_QUEUE_MANAGER");
-cf.setStringProperty(CommonConstants.__Fields.WMQ_APPLICATIONNAME, "JMS EXAMPLE");
+cf.setIntProperty(CommonConstants.WMQ_CONNECTION_MODE, CommonConstants.WMQ_CM_CLIENT);
+cf.setStringProperty(CommonConstants.WMQ_HOST_NAME, "127.0.0.1");
+cf.setIntProperty(CommonConstants.WMQ_PORT, 8010);
+cf.setStringProperty(CommonConstants.WMQ_CHANNEL, "EXAMPLE.CHANNEL.ONE");
+cf.setStringProperty(CommonConstants.WMQ_QUEUE_MANAGER, "EXAMPLE_QUEUE_MANAGER");
+cf.setStringProperty(CommonConstants.WMQ_APPLICATIONNAME, "JMS EXAMPLE");
 cf.setStringProperty(CommonConstants.USERID, "EXAMPLE_USER");
 
 using (var context = cf.createContext())
